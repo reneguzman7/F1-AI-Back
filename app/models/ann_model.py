@@ -4,9 +4,9 @@ import pandas as pd
 import joblib
 
 # Cargar el modelo y los objetos de preprocesamiento
-model = tf.keras.models.load_model('model\predict_podium.h5')
-scaler = joblib.load("scaler.pkl")
-label_encoders = joblib.load("label_encoders.pkl")
+model = tf.keras.models.load_model('model/predict_podium.h5')
+scaler = joblib.load("app\scaler.pkl")
+label_encoders = joblib.load("app\label_encoders.pkl")
 
 def preprocess_input_data(input_data):
     # Crear DataFrame con los datos de entrada
