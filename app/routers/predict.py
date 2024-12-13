@@ -7,4 +7,4 @@ router = APIRouter()
 @router.post("/predict")
 def get_prediction(input_data: InputData):
     prediction = predict_podium(input_data)
-    return {"prediction": prediction}
+    return {"podio": prediction}
