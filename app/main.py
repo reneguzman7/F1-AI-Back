@@ -7,4 +7,4 @@ app.include_router(predict.router)
 
 @app.get("/")
 def read_root():
-    return {"message": "Bienvenido a la API de predicción de F1"}
+    return {"message": "Bienvenido a la API de predicción de F1 con cambios"}
