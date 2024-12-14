@@ -10,7 +10,7 @@ pilotos = [
     'Lando Norris', 'Lewis Hamilton', 'Oscar Piastri', 'Fernando Alonso', 'Lance Stroll',
     'Guanyu Zhou', 'Kevin Magnussen', 'Daniel Ricciardo', 'Yuki Tsunoda', 'Alexander Albon',
     'Nico Hülkenberg', 'Esteban Ocon', 'Pierre Gasly', 'Valtteri Bottas', 'Logan Sargeant',
-    'Oliver Bearman', 'Franco Colapinto', 'Liam Lawson'
+    'Oliver Bearman', 'Franco Colapinto', 'Liam Lawson', 'Jack Doohan', 'David Vidales'
 ]
 
 circuitos = [

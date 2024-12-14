@@ -1,0 +1,184 @@
+[
+  {
+    "Circuito": "yas-marina",
+    "ConstructorID": "mclaren",
+    "Piloto": "Lando Norris",
+    "Resultado_Clasificacion": 1,
+    "Promedio_Quali": 5.2,
+    "Promedio_posicion_circuito": 6.2,
+    "Tasa_podios": 0.125
+  },
+  {
+    "Circuito": "yas-marina",
+    "ConstructorID": "ferrari",
+    "Piloto": "Carlos Sainz Jr.",
+    "Resultado_Clasificacion": 3,
+    "Promedio_Quali": 10.444444444444445,
+    "Promedio_posicion_circuito": 8.285714285714286,
+    "Tasa_podios": 0.0972972972972973
+  },
+  {
+    "Circuito": "yas-marina",
+    "ConstructorID": "haas",
+    "Piloto": "Nico Hülkenberg",
+    "Resultado_Clasificacion": 4,
+    "Promedio_Quali": 9.1,
+    "Promedio_posicion_circuito": 10.375,
+    "Tasa_podios": 0
+  },
+  {
+    "Circuito": "yas-marina",
+    "ConstructorID": "red-bull",
+    "Piloto": "Max Verstappen",
+    "Resultado_Clasificacion": 5,
+    "Promedio_Quali": 4,
+    "Promedio_posicion_circuito": 3.7777777777777777,
+    "Tasa_podios": 0.5297297297297298
+  },
+  {
+    "Circuito": "yas-marina",
+    "ConstructorID": "alpine",
+    "Piloto": "Pierre Gasly",
+    "Resultado_Clasificacion": 6,
+    "Promedio_Quali": 13.571428571428571,
+    "Promedio_posicion_circuito": 12.333333333333334,
+    "Tasa_podios": 0.03076923076923077
+  },
+  {
+    "Circuito": "yas-marina",
+    "ConstructorID": "mercedes",
+    "Piloto": "George Russell",
+    "Resultado_Clasificacion": 7,
+    "Promedio_Quali": 12.8,
+    "Promedio_posicion_circuito": 10,
+    "Tasa_podios": 0.10576923076923077
+  },
+  {
+    "Circuito": "yas-marina",
+    "ConstructorID": "aston-martin",
+    "Piloto": "Fernando Alonso",
+    "Resultado_Clasificacion": 8,
+    "Promedio_Quali": 9.923076923076923,
+    "Promedio_posicion_circuito": 8.416666666666666,
+    "Tasa_podios": 0.2789473684210526
+  },
+  {
+    "Circuito": "yas-marina",
+    "ConstructorID": "kick-sauber",
+    "Piloto": "Valtteri Bottas",
+    "Resultado_Clasificacion": 9,
+    "Promedio_Quali": 7.636363636363637,
+    "Promedio_posicion_circuito": 8.3,
+    "Tasa_podios": 0.3004484304932735
+  },
+  {
+    "Circuito": "yas-marina",
+    "ConstructorID": "red-bull",
+    "Piloto": "Sergio Pérez",
+    "Resultado_Clasificacion": 10,
+    "Promedio_Quali": 8.923076923076923,
+    "Promedio_posicion_circuito": 8.25,
+    "Tasa_podios": 0.13513513513513514
+  },
+  {
+    "Circuito": "yas-marina",
+    "ConstructorID": "rb",
+    "Piloto": "Yuki Tsunoda",
+    "Resultado_Clasificacion": 11,
+    "Promedio_Quali": 8.666666666666666,
+    "Promedio_posicion_circuito": 7.666666666666667,
+    "Tasa_podios": 0
+  },
+  {
+    "Circuito": "yas-marina",
+    "ConstructorID": "rb",
+    "Piloto": "Liam Lawson",
+    "Resultado_Clasificacion": 12,
+    "Promedio_Quali": 0,
+    "Promedio_posicion_circuito": 0,
+    "Tasa_podios": 0
+  },
+  {
+    "Circuito": "yas-marina",
+    "ConstructorID": "aston-martin",
+    "Piloto": "Lance Stroll",
+    "Resultado_Clasificacion": 13,
+    "Promedio_Quali": 13.714285714285714,
+    "Promedio_posicion_circuito": 12,
+    "Tasa_podios": 0.020833333333333332
+  },
+  {
+    "Circuito": "yas-marina",
+    "ConstructorID": "ferrari",
+    "Piloto": "Charles Leclerc",
+    "Resultado_Clasificacion": 14,
+    "Promedio_Quali": 5.5,
+    "Promedio_posicion_circuito": 6.166666666666667,
+    "Tasa_podios": 0.24
+  },
+  {
+    "Circuito": "yas-marina",
+    "ConstructorID": "haas",
+    "Piloto": "Kevin Magnussen",
+    "Resultado_Clasificacion": 15,
+    "Promedio_Quali": 14.875,
+    "Promedio_posicion_circuito": 14.714285714285714,
+    "Tasa_podios": 0.006097560975609756
+  },
+  {
+    "Circuito": "yas-marina",
+    "ConstructorID": "williams",
+    "Piloto": "Alexander Albon",
+    "Resultado_Clasificacion": 16,
+    "Promedio_Quali": 11,
+    "Promedio_posicion_circuito": 9.25,
+    "Tasa_podios": 0.024691358024691357
+  },
+  {
+    "Circuito": "yas-marina",
+    "ConstructorID": "kick-sauber",
+    "Piloto": "Guanyu Zhou",
+    "Resultado_Clasificacion": 17,
+    "Promedio_Quali": 17,
+    "Promedio_posicion_circuito": 14.5,
+    "Tasa_podios": 0
+  },
+  {
+    "Circuito": "yas-marina",
+    "ConstructorID": "mercedes",
+    "Piloto": "Lewis Hamilton",
+    "Resultado_Clasificacion": 18,
+    "Promedio_Quali": 2.6666666666666665,
+    "Promedio_posicion_circuito": 3.8461538461538463,
+    "Tasa_podios": 0.5933734939759037
+  },
+  {
+    "Circuito": "yas-marina",
+    "ConstructorID": "mclaren",
+    "Piloto": "Oscar Piastri",
+    "Resultado_Clasificacion": 2,
+    "Promedio_Quali": 3,
+    "Promedio_posicion_circuito": 6,
+    "Tasa_podios": 0.09090909090909091
+  },
+  {
+    "Circuito": "yas-marina",
+    "ConstructorID": "williams",
+    "Piloto": "Franco Colapinto",
+    "Resultado_Clasificacion": 19,
+    "Promedio_Quali": 0,
+    "Promedio_posicion_circuito": 0,
+    "Tasa_podios": 0
+  },
+  {
+    "Circuito": "yas-marina",
+    "ConstructorID": "alpine",
+    "Piloto": "Jack Doohan",
+    "Resultado_Clasificacion": 20,
+    "Promedio_Quali": 0,
+    "Promedio_posicion_circuito": 0,
+    "Tasa_podios": 0
+  }
+]
+
+
