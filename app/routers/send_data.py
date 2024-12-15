@@ -4,7 +4,7 @@ import os
 # Ruta al archivo JSON
 file_path = os.path.join('app', 'routers', 'data.json')
 # URL de la API
-url = "https://f1-ai-back.onrender.com/predict"
+url = "https://f1-ai-back.vercel.app/predict"
 
 # Inicializar contadores
 podio_count = 0
