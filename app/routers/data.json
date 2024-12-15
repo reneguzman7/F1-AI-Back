@@ -20,7 +20,7 @@
   {
     "Circuito": "yas-marina",
     "ConstructorID": "haas",
-    "Piloto": "Nico Hülkenberg",
+    "Piloto": "Nico Hulkenberg",
     "Resultado_Clasificacion": 4,
     "Promedio_Quali": 9.1,
     "Promedio_posicion_circuito": 10.375,
@@ -74,7 +74,7 @@
   {
     "Circuito": "yas-marina",
     "ConstructorID": "red-bull",
-    "Piloto": "Sergio Pérez",
+    "Piloto": "Sergio Perez",
     "Resultado_Clasificacion": 10,
     "Promedio_Quali": 8.923076923076923,
     "Promedio_posicion_circuito": 8.25,

@@ -1,9 +1,8 @@
 import requests
 import json
-
+import os
 # Ruta al archivo JSON
-file_path = 'app\routers\data.json'
-
+file_path = os.path.join('app', 'routers', 'data.json')
 # URL de la API
 url = "http://127.0.0.1:8000/predict"
 

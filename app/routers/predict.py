@@ -1,8 +1,9 @@
-from fastapi import APIRouter, HTTPException, UploadFile, File
+import os
+import json
+from fastapi import APIRouter, HTTPException
 from pydantic import ValidationError
 from app.schemas.input_data import InputData
 from app.models.ann_model import predict_podium
-import json
 
 router = APIRouter()
 
@@ -25,17 +26,20 @@ def get_prediction(input_data: InputData):
         # Devolvemos los errores de manera personalizada
         raise HTTPException(status_code=422, detail=errors)
 
-# Ruta para procesar el archivo JSON enviado desde el frontend y devolver resultados
+# Ruta para procesar el archivo JSON y devolver resultados
 @router.get("/send-data")
-async def send_data(file: UploadFile = File(...)):
+def send_data():
+    # Ruta al archivo JSON
+    file_path = os.path.join('app', 'routers', 'data.json')
+
     # Inicializar resultados y contador de podios
     resultados = []
     podios_contador = 0
 
     try:
-        # Leer el archivo JSON enviado desde el frontend
-        contents = await file.read()
-        data = json.loads(contents)
+        # Leer el archivo JSON
+        with open(file_path, 'r') as file:
+            data = json.load(file)
 
         # Procesar cada piloto
         for piloto in data:

@@ -1,3 +1,4 @@
+import os
 import tensorflow as tf
 import numpy as np
 import pandas as pd
@@ -6,11 +7,11 @@ from sklearn.preprocessing import LabelEncoder
 
 # Possible values for each categorical column
 pilotos = [
-    'Max Verstappen', 'Sergio Pérez', 'Carlos Sainz Jr.', 'Charles Leclerc', 'George Russell',
+    'Max Verstappen', 'Sergio Perez', 'Carlos Sainz Jr.', 'Charles Leclerc', 'George Russell',
     'Lando Norris', 'Lewis Hamilton', 'Oscar Piastri', 'Fernando Alonso', 'Lance Stroll',
     'Guanyu Zhou', 'Kevin Magnussen', 'Daniel Ricciardo', 'Yuki Tsunoda', 'Alexander Albon',
-    'Nico Hülkenberg', 'Esteban Ocon', 'Pierre Gasly', 'Valtteri Bottas', 'Logan Sargeant',
-    'Oliver Bearman', 'Franco Colapinto', 'Liam Lawson', 'Jack Doohan', 'David Vidales'
+    'Nico Hulkenberg', 'Esteban Ocon', 'Pierre Gasly', 'Valtteri Bottas', 'Logan Sargeant',
+    'Oliver Bearman', 'Franco Colapinto', 'Liam Lawson', 'Jack Doohan'
 ]
 
 circuitos = [
@@ -42,12 +43,18 @@ le_constructorid.fit(constructorid)
 label_encoders['ConstructorID'] = le_constructorid
 
 # Save the fitted LabelEncoders
-joblib.dump(label_encoders, 'app/label_encoders.pkl')
+# Guardar los label_encoders
+label_encoders_path = os.path.join('app', 'label_encoders.pkl')
+joblib.dump(label_encoders, label_encoders_path)
 
 # Cargar el modelo y los objetos de preprocesamiento
-model = tf.keras.models.load_model('model/predict_podium.h5')
-scaler = joblib.load("app/scaler.pkl")
-label_encoders = joblib.load("app/label_encoders.pkl")
+model_path = os.path.join('model', 'predict_podium.h5')
+model = tf.keras.models.load_model(model_path)
+
+scaler_path = os.path.join('app', 'scaler.pkl')
+scaler = joblib.load(scaler_path)
+
+label_encoders = joblib.load(label_encoders_path)
 
 def preprocess_input_data(input_data):
     # Crear DataFrame con los datos de entrada
