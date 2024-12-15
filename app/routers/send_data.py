@@ -2,7 +2,7 @@ import requests
 import json
 
 # Ruta al archivo JSON
-file_path = '/home/arl2k3/Documents/FINAL IA/F1-AI-Back/app/routers/Result_8.json'
+file_path = 'app\routers\data.json'
 
 # URL de la API
 url = "http://127.0.0.1:8000/predict"
