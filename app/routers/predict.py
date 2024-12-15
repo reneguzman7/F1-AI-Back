@@ -31,6 +31,7 @@ def get_prediction(input_data: InputData):
 def send_data():
     # Ruta al archivo JSON
     file_path = os.path.join('app', 'routers', 'data.json')
+    output_file_path = os.path.join('app', 'routers', 'podium-predict.json')
 
     # Inicializar resultados y contador de podios
     resultados = []
@@ -65,8 +66,31 @@ def send_data():
             except Exception as e:
                 resultados.append({"Piloto": piloto.get("Piloto", "Desconocido"), "Error": str(e)})
 
+        # Guardar los resultados en un archivo JSON
+        with open(output_file_path, 'w') as output_file:
+            json.dump(resultados, output_file)
+
         # Devolver los resultados
         return resultados
 
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error al procesar el archivo: {e}")
+
+# Nueva ruta para obtener los pilotos en podio
+@router.get("/getPodium")
+def get_podium():
+    output_file_path = os.path.join('app', 'routers', 'podium-predict.json')
+
+    try:
+        # Leer el archivo JSON con los resultados
+        with open(output_file_path, 'r') as file:
+            data = json.load(file)
+
+        # Filtrar los pilotos que están en el podio
+        podio = [piloto for piloto in data if piloto.get("Resultado") == "Podio"]
+
+        # Devolver los pilotos en el podio
+        return podio
+
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error al leer el archivo: {e}")
