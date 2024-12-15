@@ -4,7 +4,7 @@ import os
 # Ruta al archivo JSON
 file_path = os.path.join('app', 'routers', 'data.json')
 # URL de la API
-url = "http://127.0.0.1:8000/predict"
+url = "https://f1-ai-back.onrender.com/predict"
 
 # Inicializar contadores
 podio_count = 0
