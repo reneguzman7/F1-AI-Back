@@ -83,10 +83,14 @@ def predict_podium(input_data):
     # Preprocesar los datos de entrada
     processed_data = preprocess_input_data(input_data)
     
-    # Hacer la predicciÃ³n
+    # Hacer la predicción
     prediction = model.predict(processed_data)
     
-    # Convertir la predicciÃ³n a formato binario
-    prediction_binary = int(prediction[0][0] > 0.5)
+    # Obtener el valor de probabilidad
+    probability = float(prediction[0][0])
     
-    return prediction_binary
+    # Convertir la predicción a formato binario
+    prediction_binary = int(probability > 0.5)
+    
+    # Retornar tanto la decisión binaria como la probabilidad
+    return prediction_binary, probability

@@ -136,49 +136,56 @@ def send_data():
     file_path = os.path.join('app', 'routers', 'data.json')
     output_file_path = os.path.join('app', 'routers', 'podium-predict.json')
 
-    # Inicializar resultados y contador de podios
-    resultados = []
-    podios_contador = 0
-
     try:
         # Leer el archivo JSON
         with open(file_path, 'r') as file:
             data = json.load(file)
 
+        # Lista para almacenar los pilotos con sus probabilidades
+        pilotos_con_probabilidad = []
+
         # Procesar cada piloto
         for piloto in data:
             try:
-                # Si ya hay 3 podios, el resto serÃ¡ automÃ¡ticamente "Fuera de podio"
-                if podios_contador >= 3:
-                    resultados.append({"Piloto": piloto["Piloto"], "Resultado": "Fuera de podio"})
-                    continue
-
-                # Hacer la predicciÃ³n directamente
+                # Hacer la predicción directamente
                 input_data = InputData(**piloto)
-                prediction = predict_podium(input_data)
+                prediction_binary, probability = predict_podium(input_data)
 
-                # Evaluar el resultado
-                if prediction == 1:
-                    podios_contador += 1
-                    resultado = "Podio"
-                else:
-                    resultado = "Fuera de podio"
-
-                resultados.append({"Piloto": piloto["Piloto"], "Resultado": resultado})
+                # Almacenar los datos del piloto y su probabilidad
+                pilotos_con_probabilidad.append({
+                    "Piloto": piloto["Piloto"],
+                    "Probabilidad": float(probability)  # Asegurar que es float para serialización JSON
+                })
 
             except Exception as e:
-                resultados.append({"Piloto": piloto.get("Piloto", "Desconocido"), "Error": str(e)})
+                print(f"Error al procesar piloto {piloto.get('Piloto', 'Desconocido')}: {str(e)}")
+                continue
 
+        # Ordenar los pilotos por probabilidad (de mayor a menor)
+        pilotos_ordenados = sorted(pilotos_con_probabilidad, key=lambda x: x["Probabilidad"], reverse=True)
+        
+        # Asignar resultados - los 3 primeros en "Podio", el resto "Fuera de podio"
+        resultados = []
+        for i, piloto in enumerate(pilotos_ordenados):
+            resultado = "Podio" if i < 3 else "Fuera de podio"
+            resultados.append({
+                "Piloto": piloto["Piloto"],
+                "Resultado": resultado,
+                "Probabilidad": round(piloto["Probabilidad"], 4)  # Redondear a 4 decimales
+            })
+
+        # Ordenar alfabéticamente para la presentación final
+        resultados_alfabeticos = sorted(resultados, key=lambda x: x["Piloto"])
+        
         # Guardar los resultados en un archivo JSON
         with open(output_file_path, 'w') as output_file:
-            json.dump(resultados, output_file)
+            json.dump(resultados_alfabeticos, output_file)
 
         # Devolver los resultados
-        return resultados
+        return resultados_alfabeticos
 
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error al procesar el archivo: {e}")
-
 # Nueva ruta para obtener los pilotos en podio
 @router.get("/getPodium")
 def get_podium():
